@@ -47,5 +47,4 @@ print("before popping")
 print(stack)
 
 print("after popping")
-stack.pop()
 print(stack)
