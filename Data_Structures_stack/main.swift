@@ -9,42 +9,38 @@
 import Foundation
 
 
-struct Stack<Element> {
-    
-    private var storage :[Element] = []
-    
-    init() {}
-    
-    mutating func push(_ element :Element) {
-        storage.append(element)
+print("Program begin...")
+
+var quit: Bool = false
+
+while quit == false {
+    print("Write the equation")
+    guard let command = readLine() else { continue }
+    switch command.lowercased() {
+    case is String?:
+        quit = true
+    default:
+        print("Unknown command...")
     }
     
-    mutating func pop() -> Element? {
-        return storage.popLast()
+    var write = command
+    
+    let array = write.characters.map{String($0)}
+    var checkingBrakets: [String] = []
+    
+    for i in array {
+        if i == "("{
+            checkingBrakets.append(i)
+        }
+        if i == ")" {
+            checkingBrakets.append(i)
+        }
+    }
+    
+    
+    if checkingBrakets == ["(", ")"] {
+        print("example is correct")
+    } else {
+        print("example is not correct")
     }
 }
-
-//extension Stack :CustomStringConvertible {
-//    
-//    var description :String {
-//        
-//        let topDivider = "------top------\n"
-//        let bottomDivider = "\n----------"
-//        
-//        let stackElements = storage.map { "\($0)"}.reversed().joined(separator: "\n")
-//        return topDivider + stackElements + bottomDivider
-//    }
-//    
-//}
-
-var stack = Stack<Int>()
-stack.push(20)
-stack.push(10)
-stack.push(3)
-stack.push(99)
-
-print("before popping")
-print(stack)
-
-print("after popping")
-print(stack)
