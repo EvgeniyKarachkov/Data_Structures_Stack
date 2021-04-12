@@ -6,6 +6,59 @@
 //
 
 import Foundation
+print("Program begin...")
 
-print("Hello, World!")
+func analyzeExpresssion(expression: String?) {
+    guard let expression = expression else {
+        print("Nothing to analyze")
+        return
+    }
+    
+    var stack = Stack<String>()
+    let charachters = convert(expr: expression)
+    
+    for char in charachters {
+        if char == "(" {
+            stack.push(char)
+        }
+        
+        if char == ")" {
+            _ = stack.pop()
+        }
+    }
+    
+    if stack.isEmpty == true {
+        print("Our expression \(expression) is right")
+    } else {
+        print("Our expression \(expression) is NOT right")
+    }
+}
 
+private func convert(expr: String) -> [String] {
+    var result: [String] = []
+    
+    for char in expr {
+        result.append(String(char))
+    }
+    
+    return result
+}
+
+var isQuit: Bool = false
+
+while isQuit == false {
+    print("Please, enter command:")
+    var currentCommand = readLine()
+    
+    switch currentCommand {
+    case "q":
+        isQuit = true
+    case "expr":
+        let expr = readLine()
+        analyzeExpresssion(expression: expr)
+    default:
+        break
+    }
+}
+
+print("Program end...")
