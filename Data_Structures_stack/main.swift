@@ -2,45 +2,63 @@
 //  main.swift
 //  Data_Structures_stack
 //
-//  Created by Zodino BLR on 4/9/21.
-//  Copyright © 2021 Zodino BLR. All rights reserved.
+//  Created by Siarhei Siliukou on 12.04.21.
 //
 
 import Foundation
-
-
 print("Program begin...")
 
-var quit: Bool = false
 
-while quit == false {
-    print("Write the equation")
-    guard let command = readLine() else { continue }
-    switch command.lowercased() {
-    case is String?:
-        quit = true
-    default:
-        print("Unknown command...")
+func analyzeExpresssion(expression: String?) {
+    guard let expression = expression else {
+        print("Nothing to analyze")
+        return
     }
     
-    var write = command
+    var stack = Stack<String>()
+    let charachters = convert(expr: expression)
     
-    let array = write.characters.map{String($0)}
-    var checkingBrakets: [String] = []
-    
-    for i in array {
-        if i == "("{
-            checkingBrakets.append(i)
+    for char in charachters {
+        if char == "(" {
+            stack.push(char)
         }
-        if i == ")" {
-            checkingBrakets.append(i)
+        
+        if char == ")" {
+            _ = stack.pop()
         }
     }
     
-    
-    if checkingBrakets == ["(", ")"] {
-        print("example is correct")
+    if stack.isEmpty == true {
+        print("Our expression \(expression) is right")
     } else {
-        print("example is not correct")
+        print("Our expression \(expression) is NOT right")
     }
 }
+
+private func convert(expr: String) -> [String] {
+    return expr.characters.flatMap({String($0)})
+
+}
+
+var isQuit: Bool = false
+
+while isQuit == false {
+    print("Please, enter command:")
+    let currentCommand = readLine()
+    guard let command = currentCommand else {
+        continue
+    }
+    
+    switch command {
+    case "q":
+        isQuit = true
+    case "expr":
+        let expr = readLine()
+        analyzeExpresssion(expression: expr)
+    default:
+        break
+    }
+}
+
+print("Program end...")
+

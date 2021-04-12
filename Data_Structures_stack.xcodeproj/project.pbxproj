@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1523DFDD26209529009F332A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523DFDC26209529009F332A /* main.swift */; };
-		1523DFE426209EBF009F332A /* checking brakets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523DFE326209EBF009F332A /* checking brakets.swift */; };
+		15F9617C2624E8B200A47DBE /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9617B2624E8B200A47DBE /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		1523DFD926209529009F332A /* Data_Structures_stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Data_Structures_stack; sourceTree = BUILT_PRODUCTS_DIR; };
 		1523DFDC26209529009F332A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		1523DFE326209EBF009F332A /* checking brakets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "checking brakets.swift"; path = "../checking brakets.swift"; sourceTree = "<group>"; };
+		15F9617B2624E8B200A47DBE /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				1523DFDC26209529009F332A /* main.swift */,
-				1523DFE326209EBF009F332A /* checking brakets.swift */,
+				15F9617B2624E8B200A47DBE /* Stack.swift */,
 			);
 			path = Data_Structures_stack;
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F9617C2624E8B200A47DBE /* Stack.swift in Sources */,
 				1523DFDD26209529009F332A /* main.swift in Sources */,
-				1523DFE426209EBF009F332A /* checking brakets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +257,7 @@
 				1523DFE226209529009F332A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
